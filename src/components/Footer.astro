@@ -3,7 +3,7 @@ import {site, config} from "../consts";
 import {t} from '../i18n/utils'
 ---
 
-<div class="footer container p-4">
+<div class="footer container p-4 !h-28">
   {
     config.busuanzi && (
       <div class="flex items-center justify-center text-skin-base">
@@ -17,11 +17,11 @@ import {t} from '../i18n/utils'
       </div>
     )
   }
-  <div class="flex items-center flex-wrap justify-center mb-4 text-skin-base">
+  <div class="flex items-center flex-wrap justify-center mb-1 text-skin-base">
     <div>
       <span class="cursor-default">Copyright</span>
       <i class="ri-copyright-line align-middle"></i>
-      <span class="align-middle">2024</span>
+      <span class="align-middle">2007-{new Date().getFullYear()}</span>
     </div>
     {
       site.beian && (
@@ -31,9 +31,29 @@ import {t} from '../i18n/utils'
         </a>
       )
     }
+    &nbsp;
+    <a href={site.url}
+    class="truncate cursor-pointr mt-1 hover:text-skin-active">{site.title}</a>
+
     <div class="divider-vertical"></div>
 
-    <a href="/sitemap-0.xml">{t('footer.sitemap')}</a>
+    <a href="/sitemap-0.xml"
+    class="truncate cursor-pointr mt-1 hover:text-skin-active">{t('footer.sitemap')}</a>
+  </div>
+  <div class="flex items-center flex-wrap justify-center mb-4 text-skin-base">
+    <a href="https://blog.15897.com" target="_blank"
+      class="truncate cursor-pointr mt-1 hover:text-skin-active">夜火笔记</a>
+
+    <div class="divider-vertical"></div>
+
+    <a
+      href="https://cloudflarebatch.com/zh_CN"
+      target="_blank"
+      class="truncate cursor-pointr mt-1 hover:text-skin-active"
+      title="CloudFlare Batch 批量操作域名"
+    >
+      CloudFlare Batch 批量操作域名
+    </a>
   </div>
 </div>
 

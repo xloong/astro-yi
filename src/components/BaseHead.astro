@@ -9,6 +9,11 @@ if (title === site.title) {
   ogImage = new URL(site.avatar, Astro.site?.href).href;
 }
 // console.log(Astro.props.title)
+// console.log(Astro.props)
+const ogType = (title === site.title) ? "website" : "article";
+const originalDate = new Date(Astro.props.date)
+const options = { timeZone: "UTC", year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+const formattedDate = originalDate.toLocaleString('zh-CN', options);
 ---
 <head>
   <!-- Global Metadata -->
@@ -24,12 +29,21 @@ if (title === site.title) {
   <meta name="description" content={description}/>
 
   <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website"/>
+  <meta property="og:type" content={ogType}/>
   <meta property="og:url" content={Astro.url}/>
   <meta property="og:title" content={title}/>
   <meta property="og:description" content={description}/>
   <meta property="og:image" content={ogImage}/>
   <!-- <meta property="og:image:alt" content={site.description}/> -->
+  {ogType === "article" && (
+    <>
+      <meta property="og:article:published_time" content={formattedDate}/>
+      <meta property="og:article:author" content={site.author}/>
+      <meta property="og:article:section" content={Astro.props.category}/>
+      <meta property="og:article:tag" content={Astro.props.tags}/>
+    </>
+  )}
+
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image"/>

@@ -13,7 +13,7 @@ const {
   frontmatter = {
     comment: false,
     donate: false,
-    toc: false,
+    toc: true,
     mathjax: false,
     mermaid: false,
   },
@@ -24,6 +24,9 @@ const {
 <BaseHead
   title={frontmatter.title}
   description={frontmatter.description}
+  date={frontmatter.date}
+  category={frontmatter.category}
+  tags={frontmatter.tags}
   mathjax={frontmatter.mathjax}
   mermaid={frontmatter.mermaid}
 />

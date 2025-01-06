@@ -20,19 +20,20 @@
  *    All tags will be displayed in single page "/tags".
  */
 export const site = {
-  title: 'Astro Theme Yi', // required
-  favicon: '/favicon.svg', // required
-  description: 'Welcome to my independent blog website! ',
-  author: "Astro-Yi", // required
+  title: '夜火博客', // required
+  // favicon: '/favicon.svg', // required
+  favicon: '/favicon.ico', // required
+  description: '个人的碎碎念收集箱',
+  author: "夜火", // required
   avatar: '/avatar.png', // required
-  url: 'https://xxxxxx.com', // required
-  motto: 'Actions speak louder than words.',
-  recentBlogSize: 5,
+  url: 'https://www.15897.com', // required
+  motto: '个人的碎碎念收集箱',
+  recentBlogSize: 10,
   archivePageSize: 25,
   postPageSize: 10,
   feedPageSize: 20,
   beian: '',
-  asideTagsMaxSize: 0,
+  asideTagsMaxSize: 20,
 }
 
 /**
@@ -46,7 +47,7 @@ export const site = {
  */
 export const config = {
   busuanzi: false,
-  lang: 'en', // en | zh-cn | zh-Hant | cs
+  lang: 'zh-cn', // en | zh-cn | zh-Hant | cs
   codeFoldingStartLines: 16, // Need to re-run the project to take effect
   ga: false, // If you want to integrate with Google Analytics, just enter your GA-ID here.
 
@@ -64,84 +65,100 @@ export const config = {
  * target {string} optional "_self|_blank" open in current window / open in new window
  */
 export const categories = [
+  // {
+  //   name: "Blog",
+  //   iconClass: "ri-draft-line",
+  //   href: "/blog/1",
+  // },
   {
-    name: "Blog",
+    name: "夜火笔记",
     iconClass: "ri-draft-line",
-    href: "/blog/1",
+    href: "https://blog.15897.com",
+    target: "_blank"
   },
   {
-    name: "Feed",
-    iconClass: "ri-lightbulb-flash-line",
-    href: "/feed/1",
+    name: "标签",
+    iconClass: "ri-price-tag-3-line",
+    href: "/tags/",
   },
+  // {
+  //   name: "Feed",
+  //   iconClass: "ri-lightbulb-flash-line",
+  //   href: "/feed/1",
+  // },
   // {
   //   name: "Memos",
   //   iconClass: "ri-quill-pen-line",
   //   href: "/memos",
   // },
   {
-    name: "Archive",
+    name: "归档",
     iconClass: "ri-archive-line",
     href: "/archive/1",
   },
+  // {
+  //   name: "Message",
+  //   iconClass: "ri-chat-1-line",
+  //   href: "/message",
+  // },
   {
-    name: "Message",
-    iconClass: "ri-chat-1-line",
-    href: "/message",
+    name: '关于',
+    iconClass: 'ri-information-line',
+    href: '/about',
   },
   {
-    name: "Search",
+    name: "搜索",
     iconClass: "ri-search-line",
     href: "/search",
   },
-  {
-    name: "More",
-    iconClass: "ri-more-fill",
-    href: "javascript:void(0);",
-    children: [
-      {
-        name: 'About',
-        iconClass: 'ri-information-line',
-        href: '/about',
-      },
-      {
-        name: 'Friends',
-        iconClass: 'ri-user-5-line',
-        href: '/friends',
-        target: '_self',
-      },
-    ]
-  }
+  // {
+  //   name: "More",
+  //   iconClass: "ri-more-fill",
+  //   href: "javascript:void(0);",
+  //   children: [
+  //     {
+  //       name: 'About',
+  //       iconClass: 'ri-information-line',
+  //       href: '/about',
+  //     },
+  //     {
+  //       name: 'Friends',
+  //       iconClass: 'ri-user-5-line',
+  //       href: '/friends',
+  //       target: '_self',
+  //     },
+  //   ]
+  // }
 ]
 
 /**
  * Personal link address
  */
 export const infoLinks = [
-  {
-    icon: 'ri-telegram-fill',
-    name: 'telegram',
-    outlink: 'xxxxxxx',
-  },
-  {
-    icon: 'ri-twitter-fill',
-    name: 'twitter',
-    outlink: 'xxxxxxx',
-  },
-  {
-    icon: 'ri-instagram-fill',
-    name: 'instagram',
-    outlink: 'xxxxxxx',
-  },
+  // {
+  //   icon: 'ri-telegram-fill',
+  //   name: 'telegram',
+  //   outlink: 'xxxxxxx',
+  // },
+  // {
+  //   icon: 'ri-twitter-fill',
+  //   name: 'twitter',
+  //   outlink: 'xxxxxxx',
+  // },
+  // {
+  //   icon: 'ri-instagram-fill',
+  //   name: 'instagram',
+  //   outlink: 'xxxxxxx',
+  // },
   {
     icon: 'ri-github-fill',
     name: 'github',
-    outlink: 'xxxxxxx',
+    outlink: 'https://github.com/xloong',
   },
   {
     icon: 'ri-rss-fill',
     name: 'rss',
-    outlink: 'xxxxxxx',
+    outlink: '/rss.xml',
   }
 ]
 
@@ -175,6 +192,12 @@ export const friendshipLinks =
     //   url: 'https://cirry.cn',
     //   avatar: "https://cirry.cn/avatar.png",
     //   description: '前端开发的日常'
+    // },
+    // {
+    //   name: "Nuke Blog",
+    //   url: 'http://nukeblog.cn',
+    //   // avatar: "http://cirry.cn/avatar.png",
+    //   description: 'Nuke Blog'
     // },
   ]
 

@@ -3,9 +3,13 @@ import {site} from "../consts";
 import {getCollection} from "astro:content";
 
 export async function GET(context) {
-  const blog = (await getCollection('blog')).filter(({data}) => {
+  let blog = (await getCollection('blog')).filter(({data}) => {
     return import.meta.env.PROD ? !data.draft : true
   });
+  // 倒叙之后 再取20条
+  blog = blog.sort((a, b) => b.data.date - a.data.date)
+  blog = blog.slice(0, 20)
+
   return rss({
     title: site.title,
     description: site.description,

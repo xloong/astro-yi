@@ -81,4 +81,20 @@ let resultPosts = sortPosts.splice(0, site.recentBlogSize);
   </div>
 </div>
 
+<div>
+  <div class="aside-widget">
+    <i class="ri-links-line menu-icon"></i> 友情链接
+  </div>
+  <div class="flex flex-col">
+    <a
+      href="http://nukeblog.cn"
+      class="truncate cursor-pointr mt-1 hover:text-skin-active"
+      title="Nuke blog"
+      target="_blank"
+    >
+      Nuke blog
+    </a>
+  </div>
+</div>
+
 {comment.enable && comment.type === "waline" && <CommentAside/>}

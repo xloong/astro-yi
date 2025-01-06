@@ -1,9 +1,11 @@
 ---
-date: 2024-03-24
 title: New features
 description: More new features specific to this theme.
+date: 2024-03-24
 mermaid: true
 mathjax: true
+tags: ["test", "markdown"]
+draft: true
 ---
 
 ### Support Github Card
