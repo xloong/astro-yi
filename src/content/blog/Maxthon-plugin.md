@@ -21,6 +21,7 @@ ViewNums: 3999
 
 程序代码
 
+```
 [General]
 ;必须,定义插件的主要属性 Name=
 ;插件名称 Author=
@@ -67,6 +68,7 @@ Name1=
 
 FileName1=
 ;提供第一个下拉菜单项目应执行的代码的档案，如此类推
+```
 
 **插件文件类型和界面元素类型支持情况**
 
@@ -78,9 +80,12 @@ FileName1=
 
 **1).Script文件格式**
 
-程序代码<script language= "Javascript" >
+程序代码
+```html
+<script language= "Javascript" >
 //脚本内容
 </script>
+```
 
 **2).扩展属性**
 ·max_security_id：返回傲游安全ID，例：var security_id=%max_security_id

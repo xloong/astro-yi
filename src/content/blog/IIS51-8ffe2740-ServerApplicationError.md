@@ -53,13 +53,29 @@ TCP    XXX.XXX.XXX.127:80     59.XX.X.27:3700      ESTABLISHED   
 **1。**右键我的电脑--管理--本地用户和组，给IUSR_机器名和IWAM_机器名两个用户设置密码，要一样。
 
 **2。**开始--运行--输入cmd，
-然后cd c:InetpubAdminScripts
-然后cscript.exe adsutil.vbs set w3svc/wamuserpass 你的密码，
-然后cscript.exe adsutil.vbs set w3svc/anonymoususerpass 你的密码
+然后
+```
+cd c:InetpubAdminScripts
+```
+然后
+```
+cscript.exe adsutil.vbs set w3svc/wamuserpass
+```
+ 你的密码，
+然后
+```
+cscript.exe adsutil.vbs set w3svc/anonymoususerpass
+```
+ 你的密码
 
 看一下，行了没有？如果还不行，那么
+```
 cscript.exe synciwam.vbs -v，
-然后iisreset
+```
+然后
+```
+iisreset
+```
 
 **Server Application Error续,8004EOOF错误**
 
@@ -70,13 +86,13 @@ MSDTC的问题: msdtc服务没有正常启动。 找到原因就好办啦^_^
 **Step1**
 
 删除注册表中的键：
-
+```
 HKEY_LOCAL_MACHINESYSTEMCurrentControlSetServicesMSDTC
 
 HKEY_LOCAL_MACHINESOFTWAREMicrosoftMSDTC
 
 HKEY_CLASSES_ROOTCID
-
+```
 **Step2**
 
 停止 MSDTC服务：net stop msdtc
@@ -88,9 +104,9 @@ HKEY_CLASSES_ROOTCID
 **Step4**
 
 重新安装MSDTC服务：
-
+```
 msdtc -install
-
+```
 然后再按照原来的解决Server Application Error的方法就可以了
 
 如果还不行的话，这时把IIS卸掉，重新安装就可以了啊

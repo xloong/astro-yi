@@ -1,6 +1,6 @@
 ---
 title: html操作本地数据库
-description: 来源：vbs小铺<scriptlanguage="javascript">　//用JavaScript写服务器端连接数据库的代码示例varconn=newActiveXObject("ADODB.Connection");conn.Open("DBQ=c:\a.mdb;DRIVER={MicrosoftAcc
+description: 来源：vbs小铺用JavaScript写服务器端连接数据库的代码示例
 date: 2008-02-29 09:36:12
 category: 技术文章
 tags: ['数据库', '脚本Script']
@@ -10,7 +10,7 @@ ViewNums: 5196
 ---
 
 来源：vbs小铺
-
+```html
 <script language="javascript">
 　 //用 JavaScript 写服务器端连接数据库的代码示例
 　 var conn = new ActiveXObject("ADODB.Connection");
@@ -32,3 +32,4 @@ ViewNums: 5196
 　 conn.close();
 　 conn = null;
 　</script>
+```

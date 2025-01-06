@@ -12,6 +12,7 @@ ViewNums: 4616
 今天是[愚人节](/tags/%E6%84%9A%E4%BA%BA%E8%8A%82)嘛，大家不是愚人，不用我做解释。一眼就可以看出来。[漏洞](/tags/%E6%BC%8F%E6%B4%9E%E4%BF%A1%E6%81%AF)存在版本4.6sql+access，一路跟踪下去吧
 
 漏洞文件：attachment.asp
+```
 <!-- #include file="inc/inc_syssite.asp" -->
 <%
 Dim Path,rs,FileID,ShowDownErr,uid,file_ext
@@ -186,6 +187,6 @@ Function CheckDownLoad()
     CheckDownLoad = True
 End Function
 %>
-
+```
 From：<http://www.52cmd.cn>
 

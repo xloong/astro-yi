@@ -15,6 +15,7 @@ ViewNums: 5629
 
 我们首先还是来看看中网景论坛的最新版本"(CNKBBS2007)中网景论坛2007v5.0 "官方下载地址"http://www.cnetking.com/websys2.asp?id=26"发布时间是2007-06-06,打开系统的源代码后,在"user_RxMsg_detail.asp"文件中,有如下代码:
 
+```
 <!--＃i nclude file="opendb.asp" --> (调用opendb.asp文件)
 
 <!--＃i nclude file="char.asp" -->
@@ -32,9 +33,11 @@ if id<>"" then Call IsNum(bid) (这是程序员的出现地方,注意bid<>id)
 conn.execute("update cnk_Users_RxMsg set readed=1 where id="&id) '设置已读
 
 rs.open "select * from cnk_users_RxMsg where id="&id,conn,1,3
+```
 
 我们再打开"opendb.asp"文件
 
+```
 <%Option Explicit
 
 Response.Buffer = true%>
@@ -47,8 +50,10 @@ Response.Buffer = true%>
 
 ..................
 
+```
 以现它是连接数据库的文件,其中调用了fzr.asp文件,我们再打开fzr.asp文件
 
+```
 <%
 
 '--------版权说明------------------
@@ -98,6 +103,7 @@ Response.Write "提交参数："&Fy_Get&"<br>"
 Response.Write "提交数据："&Request.QueryString(Fy_Get)
 
 ......................
+```
 
 很明显的看出它是一个SQL通用防注入程序文件,(以上的红字是对代码的解释)
 
@@ -105,7 +111,9 @@ Response.Write "提交数据："&Request.QueryString(Fy_Get)
 
    原理讲好了,下面我们来学学coolie注入语句吧
 
+```
 cookies的注入语句:alert(document.cookie="id="+escape("这就是asp? id=xx后面xx代表的数值) and (这里是注入攻击代码)"));
+```
 
 这儿用到了javascript语言的知识,我把这语句的意思分解如下,以便大家理解:
 

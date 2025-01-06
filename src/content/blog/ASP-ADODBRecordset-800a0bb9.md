@@ -45,9 +45,11 @@ rs.open sql,1,1的方法，可是后面的数字参数很多人不解其意，�
 CursorType LockType CommandType
 比如 rs.open sql,1,1
 也可以写成
+```
 rs.cursorType = 1
 rs.LockType = 1
 rs.open sql
+```
 其中CursorType代表从一个表或者一个SQL查询结果返回的记录。
 这个参数有四个值分别是：
 adOpenForwardOnly 表示只允许在记录集内的记录间往前移动。这个是缺省值。
@@ -55,21 +57,23 @@ adOpenKeyset 反映由其它用户所做的对记录的改变或者删除动作�
 adOpenDynamic 反映由其它用户所做的对记录的改变或者删除动作，包括添加的新记录
 adOpenStatic 不反映其它用户对记录所做的修改，添加，删除动作。
 这四个值VBSCRIPT预定义位
+```
 adOpenForwardOnly = 0
 adOpenKeyset = 1
 adOpenDynamic = 2
 adOpenStatic = 3
-
+```
 lockType 表示当打开记录集时，数据提供者用于锁定数据库的类型：
 adLockReadOnly 数据不能改变，这是缺省值！
 adLockPessimistic 数据提供者在开始编辑数据的时候锁定记录
 adLockOptimistic 仅当调用update方法时，数据提供者锁定记录
 adLockBatchOptimistic 用于批处理修改
 他们的常量值定义分别是：
+```
 adLockReadOnly = 1
 adLockPessimistic = 2
 adLockOptimistic = 3
 adLockBatchOptimistic = 4
-
+```
 PS：夜火最近在狂赶毕业设计，文章只能间歇性发一下，希望答辩之前能把毕业设计和毕业论文都赶出来吧~
 

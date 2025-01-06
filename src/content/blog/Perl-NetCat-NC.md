@@ -10,7 +10,7 @@ ViewNums: 2759
 ---
 
 这个机器有多古老？4.6-RELEASE [FreeBSD](/blog/freebsd-71-beta2)，没有gcc，没有make，连系统都乱七八糟的，port都不好使，pkg_add -r安装包都会有问题，真是无语了，还好有安装了一个Perl 5.8.8。修理Port花了半天时间，硬是没搞好。想想也不划算，把紧急要用的一些小工具花一会儿功夫自己做一个出来算了，于是有了这个简单的**Perl 版NC**，不过我没支持-e参数，用不着。
-
+```
 1. #!/usr/bin/perl
 3. use strict;
 4. use IO::Socket;
@@ -113,6 +113,6 @@ ViewNums: 2759
 119. print "t  -l -p 99n";
 120. print "t 192.168.0.1 80n";
 121. }
-
+```
 **Author:云舒**
 

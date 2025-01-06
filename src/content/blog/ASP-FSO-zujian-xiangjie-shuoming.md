@@ -15,7 +15,9 @@ ViewNums: 11497
 
 FSO 不能操作二进制文件，要操作二进制文件，使用：[ADODB.Stream](http://www.cftea.com/c/2006/09/B8V6AUPYDKWNTYR3.asp)。
 
-**创建文件**dim fso, f
+**创建文件**
+```
+dim fso, f
 set fso = server.CreateObject("Scripting.FileSystemObject")
 set f = fso.CreateTextFile("C: est.txt", true) '第二个参数表示目标文件存在时是否覆盖
 f.Write("写入内容")
@@ -24,8 +26,10 @@ f.WriteBlankLines(3) '写入三个空白行（相当于在文本编辑器中按�
 f.Close()
 set f = nothing
 set fso = nothing
+```
 
 **打开并读文件**
+```
 dim fso, f
 set fso = server.CreateObject("Scripting.FileSystemObject")
 set f = fso.OpenTextFile("C: est.txt", 1, false) '第二个参数 1 表示只读打开，第三个参数表示目标文件不存在时是否创建
@@ -62,29 +66,42 @@ else
     response.Write("目标文件不存在")
 end if
 set fso = nothing
+```
 
-**移动文件**dim fso
+**移动文件**
+```
+dim fso
 set fso = server.CreateObject("Scripting.FileSystemObject")
 call fso.MoveFile("C: est.txt", "D: est111.txt") '两个参数的文件名部分可以不同
 set fso = nothing
+```
 
-**复制文件**dim fso
+**复制文件**
+```
+dim fso
 set fso = server.CreateObject("Scripting.FileSystemObject")
 call fso.CopyFile("C: est.txt", "D: est111.txt") '两个参数的文件名部分可以不同
 set fso = nothing
+```
 
-**删除文件**dim fso
+**删除文件**
+```
+dim fso
 set fso = server.CreateObject("Scripting.FileSystemObject")
 fso.DeleteFile("C: est.txt")
 set fso = nothing
+```
 
 **创建文件夹**
+```
 dim fso
 set fso = server.CreateObject("Scripting.FileSystemObject")
 fso.CreateFolder("C: est") '目标文件夹的父文件夹必须存在
 set fso = nothing
+```
 
 **判断文件夹是否存在**
+```
 dim fso
 set fso = server.CreateObject("Scripting.FileSystemObject")
 if fso.FolderExists("C:Windows") then
@@ -93,9 +110,13 @@ else
     response.Write("目标文件夹不存在")
 end if
 set fso = nothing
+```
 
-**删除文件夹**dim fso
+**删除文件夹**
+```
+dim fso
 set fso = server.CreateObject("Scripting.FileSystemObject")
 fso.DeleteFolder("C: est") '文件夹不必为空
 set fso = nothing
+```
 

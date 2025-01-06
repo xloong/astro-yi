@@ -40,42 +40,46 @@ Alt 　　　　　%
 
 ---Just Do It---------------------------------
 让VBS脚本自动在词本中输入一行文字"Hello, welcome to cfan".
-
+```
 Dim WshShell
 Set WshShell=WScript.CreateObject("WScript.Shell")
 WshShell.Run "notepad"
 WScript.Sleep 200
 WshShell.AppActivate " 无标题 - 记事本 "
 WshShell.SendKeys "hello, welcome to cfan"
-
+```
 我们最常用的记事本没有Word、WPS那样的自动定时存盘功能,其实利用VBS脚本再加上SendKeys命令,就能弥补这个遗憾.打开记事本,输入以下内容(以容易描述和分析,把代码分为四个部分):
 
 '第一部分：定义变量和对象
+```
 Dim WshShell, AutoSaveTime, TXTFileName
 AutoSaveTime=300000
 Set WshShell=WScript.CreateObject("WScript.Shell")
 TXTFileName=InputBox("请输入你要创建的文件名(不能用中文和纯数字)：")
-
+```
 '第二部分：打开并激活记事本
+```
 WshShell.Run "notepad"
 WScript.Sleep 200
 WshShell.AppActivate "无标题 - 记事本"
 
 '第三部分：用输入的文件名存盘
+```
 WshShell.SendKeys "^s"
 WScript.Sleep 300
 WshShell.SendKeys TXTFileName
 WScript.Sleep 300
 WshShell.SendKeys "%s"
 WScript.Sleep AutoSaveTime
-
+```
 '第四部分：自动定时存盘
+```
 While WshShell.AppActivate (TXTFileName)=True
 WshShell.SendKeys "^s"
 WScript.Sleep AutoSaveTime
 Wend
 WScript.Quit
-
+```
 将其保存为记事本.vbs,以后要使用记事本时,都通过双击这个脚本文件来打开.
 
 程序翻译
@@ -93,7 +97,7 @@ WScript.Quit
 -----------------------------------------------
 
 VBS中Sendkey键盘对应的码表
-
+```
 Key Code
 ------------------------------
 Shift +
@@ -135,6 +139,6 @@ F13 {F13}
 F14 {F14}
 F15 {F15}
 F16 {F16}
-
+```
 来源：Tr4c3的学习笔记
 

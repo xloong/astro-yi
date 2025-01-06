@@ -40,29 +40,45 @@ http://www.xxx.com/1.asp?id=123
 http://www.xxx.com/1.asp
 加载网页,显示不正常（没有输参数的原因)
 之后在IE输入框再输入
+```
 javascript:alert(document.cookie="id="+escape("123"));
+```
 按回车,你会看到弹出一个对话框 内容是: id=123
 之后，你刷新一个网页，如果正常显示，表示是用
 Request("ID") 这样的格式收集数据~~~~,这种格式就可以试Cookies注入了
 
 在输入框中输入
+```
 javascript:alert(document.cookie="id="+escape("123 and 3=3"));
+```
 刷新页面,如果显示正常,可以再试下一步(如果不正常,就有可能也有过滤了)
 
-javascript:alert(document.cookie="id="+escape("123 and 3=4"));刷新一下页面
+```
+javascript:alert(document.cookie="id="+escape("123 and 3=4"));
+```
+刷新一下页面
 如果不正常显示，这就表示有注入了~~~
 
 如果程序员是用
+```
 Request.QueryString
+```
 或
+```
 Request.Form
+```
 收集数据的话，是无法利用Cookies绕过防注入系统进行注入的，因为服务程序是直截从GET或POST中读取数据的，Cookies是否有数据,WEB服务器是不理的,所以就无法利用了！~
 
 --------------------------------------------------------------------------
 为了方便不懂的朋友了解
+```
 javascript:alert(document.cookie="id="+escape("123"));
+```
 的意思,我说明一下
-document.cookie="id="+escape("123")  就是把 123 保存到Cookies 的 ID 中
+```
+document.cookie="id="+escape("123") 
+```
+就是把 123 保存到Cookies 的 ID 中
 alert(xxx) 就是弹对话框
 
 后话
