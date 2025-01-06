@@ -280,3 +280,42 @@ menu {
 .MathJax svg {
   display: inline;
 }
+
+
+/* 标题样式 */
+.markdown-body h1:before{
+  --tw-text-opacity: 1;
+  background: rgb(22 163 74/var(--tw-text-opacity));
+  color: transparent;
+  content: ".";
+  margin-right: 0.5em;
+  display: inline-block;
+
+  width: 0.4em;
+}
+.markdown-body h2:before{
+  --tw-text-opacity: 1;
+  background: rgb(22 163 74/var(--tw-text-opacity));
+  color: transparent;
+  content: ".";
+  margin-right: 0.4em;
+  display: inline-block;
+
+  width: 0.3em;
+}
+.markdown-body h3:before{
+  --tw-text-opacity: 1;
+  background: rgb(22 163 74/var(--tw-text-opacity));
+  color: transparent;
+  content: ".";
+  margin-right: 0.3em;
+  display: inline-block;
+
+  width: 0.2em;
+}
+
+.markdown-body h1{
+  padding-bottom:0;
+  padding-left:0;
+  border-bottom-color: #16A34A;
+}
