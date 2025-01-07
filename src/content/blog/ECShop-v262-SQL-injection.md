@@ -18,7 +18,7 @@ ViewNums: 7699
 影响2.5.x和2.6.x,其他版本未测试
 
 goods_script.php44行:
-
+```php
     if (empty($_GET['type']))
     {
         ...
@@ -28,10 +28,12 @@ goods_script.php44行:
         ...
     }
     $sql .= " LIMIT " . (!empty($_GET['goods_num']) ? intval($_GET['goods_num']) : 10);
-    $res = $db->query($sql);$sql没有初始化,很明显的一个漏洞:)
+    $res = $db->query($sql);
+```
+$sql没有初始化,很明显的一个漏洞:)
 
 Exploit:
-
+```php
 #!/usr/bin/php
 <?php
 
@@ -114,4 +116,4 @@ function send()
 }
 
 ?>
-
+```

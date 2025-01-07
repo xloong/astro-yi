@@ -28,7 +28,9 @@ APP KEY：7cb032049f2c900fea509424e614a979
 怎么知道本地系统是否安装了curl呢，方法如下：
 1.在web服务器目录（ Ubuntu下的通常为 /var/www )新建crul.php文件
 2.编辑文件，键入下面一行代码：
+```php
   <?php phpinfo(); ?>
+```
 3.保存文件
 4.打开浏览器，浏览该网页。（例如：http://localhost/curl.php)
 5.搜索"curl",如果没搜到就证明没安装curl。

@@ -12,7 +12,9 @@ from：独来读网
 
 功能：挖出土豆网土豆视频FLV文件实际地址
 演示：[http://www.51du.cn/tudou.php](http://www.51du.cn/tudou.php "http://www.51du.cn/tudou.php")
-PHP源码：<?
+PHP源码：
+```php
+<?
 /*
 e.g http://www.51du.cn/tudou.php
 */
@@ -42,3 +44,4 @@ $q=urldecode($_GET['q']);
  echo '请输入观看页面的网址:例如"http://www.tudou.com/programs/view/vZriVsqk-xc/"';
  }
 ?>
+```

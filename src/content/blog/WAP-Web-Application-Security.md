@@ -64,8 +64,8 @@ WML是Wireless Markup Language（无线标记语言）的缩写，它同HTML类�
 HTML页面面临的一个大的安全风险就是XSS，那是因为输出到页面的参数没有被妥善的处理导致攻击者可以向页面注入HTML或者Javascript代码。
 类似的，对于后台程序处理到的参数如果没有做好处理，WML页面也可以被注入任何数据，这种方式可以叫做WML注入（WML Injection）。
 好，看一个简单的例子，有这样一个PHP代码（为了更好的演示，假设magic_quotes_gpc=off）：
-```
- `<?PHP
+```php
+<?PHP
 header("Content-Type: text/vnd.wap.wml");
 echo "<?xml version="1.0"?>";
 ?>
@@ -74,7 +74,7 @@ echo "<?xml version="1.0"?>";
 <card id="no1" title="Card 1">
 <p>Hello <?PHP echo $_REQUEST['a']?>!</p>
 </card>
-</wml>`
+</wml>
 ```
 呵呵，很明显，参数a没有被转义就直接输出到页面了，一个WML[注入](/tags/%E6%B3%A8%E5%85%A5)[漏洞](/tags/%E6%BC%8F%E6%B4%9E%E4%BF%A1%E6%81%AF)就产生了。
 
