@@ -57,6 +57,10 @@ export default defineConfig({
 
 
 
+    "/blog/post/5.html": {
+      status: 301,
+      destination: "/about"
+    },
     "/blog/post/0-to-33600-port.html": {
         status: 301,
         destination: "/blog/0-to-33600-port"
@@ -816,10 +820,6 @@ export default defineConfig({
     "/blog/post/5-zhong-kaiyuan-xieyi-bijiao.html": {
         status: 301,
         destination: "/blog/5-zhong-kaiyuan-xieyi-bijiao"
-    },
-    "/blog/post/5.html": {
-        status: 301,
-        destination: "/blog/5a"
     },
     "/blog/post/50-ge-xiaoyu-100k-windows-ruanjian.html": {
         status: 301,
