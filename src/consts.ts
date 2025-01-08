@@ -158,7 +158,8 @@ export const infoLinks = [
   {
     icon: 'ri-rss-fill',
     name: 'rss',
-    outlink: '/rss.xml',
+    // outlink: '/rss.xml',
+    outlink: 'https://feeds.feedburner.com/15897',
   }
 ]
 
