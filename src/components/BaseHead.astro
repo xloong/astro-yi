@@ -4,10 +4,13 @@ import '../styles/hack.css'
 import {site, config} from "../consts";
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const {title = site.title, description = site.description, mathjax = false, mermaid = false} = Astro.props
+let {title = site.title, description = site.description, mathjax = false, mermaid = false} = Astro.props
 let ogImage = '';
 if (title === site.title) {
   ogImage = new URL(site.avatar, Astro.site?.href).href;
+}
+else{
+  title = title + ' - ' + site.title;
 }
 // console.log(Astro.props.title)
 ---

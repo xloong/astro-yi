@@ -2,12 +2,13 @@
 import IndexPage from "src/layouts/IndexPage.astro";
 import {getCollectionByName} from "../../utils/getCollectionByName";
 import getUniqueTags from "src/utils/getUniqueTags";
+import {t} from '../../i18n/utils'
 
 const blogs = await getCollectionByName('blog')
 let tagArr = getUniqueTags(blogs);
 ---
 
-<IndexPage>
+<IndexPage title={t('sidebar.tags')}>
   <div class="flex flex-wrap">
     {
       (
