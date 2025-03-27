@@ -63,7 +63,7 @@ copyhistory=yes,width=800,height=600,left=10,top=10");
 </SCRIPT>
 ```
 **8、asp木马超级隐藏**
-```asp
+```txt
 copy C:Inetpubwwwrootmm11.htm \.C:Inetpubwwwrootmmcom1.htm
 ```
 **9、利用邮箱传播木马**

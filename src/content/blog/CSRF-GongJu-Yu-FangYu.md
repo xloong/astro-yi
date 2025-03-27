@@ -48,7 +48,7 @@ ViewNums: 5854
 **0x05 CSRF With Flash**
 flash是可以提交数据到任意URL的，打开盗版的 Adobe flash CS 3 Professional，新建一个 flash文件(ActionScript 3.0) ，在默认的图层上点右键选动作，然后把以下代码添加进去：
 ：
-```as
+```txt
 import flash.net.URLRequest;
 import flash.system.Security;
 var url = new URLRequest("[http://www.0x54.org/lake2](http://www.0x54.org/lake2 "http://www.0x54.org/lake2")");
