@@ -1,6 +1,8 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
+import type {AnalyticsConfig} from "./types/analyticsTypes"
+
 /**
  * title {string} website title
  * favicon {string} website favicon url
@@ -9,6 +11,7 @@
  * avatar {string} Avatar used in the profile
  * motto {string} used in the profile
  * url {string} Website link
+ * baseUrl {string} When using GitHubPages, you must enter the repository name, startWith '/', e.g. /repo_name
  * recentBlogSize {number} Number of recent articles displayed in the sidebar
  * archivePageSize {number} Number of articles on archive pages
  * postPageSize {number} Number of articles on blog pages
@@ -27,8 +30,9 @@ export const site = {
   author: "夜火", // required
   avatar: '/avatar.png', // required
   url: 'https://www.15897.com', // required
+  baseUrl: '', // When using GitHubPages, you must enter the repository name startWith '/'. e.g. '/astro-blog'
   motto: '个人的碎碎念收集箱',
-  recentBlogSize: 10,
+  recentBlogSize: 5,
   archivePageSize: 25,
   postPageSize: 10,
   feedPageSize: 20,
@@ -46,10 +50,8 @@ export const site = {
  * memosPageSize {number} 10
  */
 export const config = {
-  busuanzi: false,
   lang: 'zh-cn', // en | zh-cn | zh-Hant | cs
   codeFoldingStartLines: 16, // Need to re-run the project to take effect
-  ga: false, // If you want to integrate with Google Analytics, just enter your GA-ID here.
 
   // memos config
   memosUrl: '', // https://xxxx.xxx.xx
@@ -151,6 +153,21 @@ export const infoLinks = [
   //   outlink: 'xxxxxxx',
   // },
   {
+    icon: 'ri-telegram-fill',
+    name: 'telegram',
+    outlink: '',
+  },
+  {
+    icon: 'ri-twitter-fill',
+    name: 'twitter',
+    outlink: '',
+  },
+  {
+    icon: 'ri-instagram-fill',
+    name: 'instagram',
+    outlink: '',
+  },
+  {
     icon: 'ri-github-fill',
     name: 'github',
     outlink: 'https://github.com/xloong',
@@ -246,4 +263,26 @@ export const comment = {
     'data-lang': "",
     'crossorigin': "",
   }
+
+  //
 }
+
+/**
+ * Analytics Feature Configuration
+ *
+ * This file centralizes the analytics configuration for the application.
+ * It defines and exports the default settings for Umami and Google Analytics.
+ */
+export const analytics: AnalyticsConfig = {
+  enable: false,
+  umamiConfig: {
+    enable: false,
+    id: "",
+    url: ""
+  },
+  gaConfig: {
+    enable: false,
+    id: ""
+  },
+  busuanzi: false,
+};

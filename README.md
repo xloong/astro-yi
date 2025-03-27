@@ -6,7 +6,7 @@ Demo：[Astro-Theme-Yi](https://astro-yi-nu.vercel.app/)
 
 A content-focused Astro blog theme, Yi, in Chinese, it means fast and concise.
 
-![](https://astro-yi.obs.cn-east-3.myhuaweicloud.com/7.png)
+![](https://astro-yi.obs.cn-east-3.myhuaweicloud.com/9.png)
 
 ![](https://astro-yi.obs.cn-east-3.myhuaweicloud.com/1.png)
 
@@ -14,6 +14,7 @@ A content-focused Astro blog theme, Yi, in Chinese, it means fast and concise.
 
 ### 🔥 Features
 
+- [x] Support github pages.
 - [x] Supports multi-platform display.
 - [x] Supports dark mode.
 - [x] Supports Memos.
@@ -54,9 +55,22 @@ npm run build # build your production site to ./dist
 ```
 After the packaging is completed, Upload the `dist` folder to the web server directory.
 
+### GitHub Pages deployment
+
+In /src/consts.ts, modify the contents of the site field:
+
+```js
+export const site = {
+  // ...
+  url: 'https://cirry.github.io', // required,  website origin
+  baseUrl: '/yi.github.io', // When using GitHubPages, you must enter the repository name startwith '/'
+  // ...
+}
+```
+
 ## Configuration
 
-In the `src/const.ts` file, you can make some modifications according to your needs.
+The only profile for this blog is: `src/consts.ts`, you can make some modifications according to your needs.
 
 ```ts
 /**
@@ -67,6 +81,7 @@ In the `src/const.ts` file, you can make some modifications according to your ne
  * avatar {string} Avatar used in the profile
  * motto {string} used in the profile
  * url {string} Website link
+ * baseUrl {string} When using GitHubPages, you must enter the repository name
  * recentBlogSize {number} Number of recent articles displayed in the sidebar
  * archivePageSize {number} Number of articles on archive pages
  * postPageSize {number} Number of articles on blog pages
@@ -89,19 +104,15 @@ export const site = {
   }
 
 /**
- * busuanzi {boolean} Enable Busuanzi Statistics Functionality
  * lang {string} Default website language: English
  * codeFoldingStartLines {number} default 16
- * ga {string} google analytics code
  * memosUrl {string} memos server url
  * memosUsername {string} memos login name
  * memosPageSize {number} 10
  */
 export const config = {
-  busuanzi: false,
   lang: 'en', // English: en | 简体中文: zh-cn | 繁體中文: zh-Hant | cs
   codeFoldingStartLines: 16, // Need to re-run the project to take effect
-  ga: false, // If you want to integrate with Google Analytics, just enter your GA-ID here.
   
   // memos config
   memosUrl: '', // https://xxxx.xxx.xx
@@ -273,6 +284,27 @@ export const comment = {
     'crossorigin': "anonymous",
   }
 }
+
+/**
+ * Analytics Feature Configuration
+ *
+ * This file centralizes the analytics configuration for the application.
+ * It defines and exports the default settings for Umami and Google Analytics.
+ */
+export const analytics: AnalyticsConfig = {
+  enable: false,
+  umamiConfig: {
+    enable: false,
+    id: "",
+    url: ""
+  },
+  gaConfig: {
+    enable: false,
+    id: ""
+  },
+  busuanzi: false,
+};
+
 ```
 
 Please modify your website configuration, comment system configuration, appreciation function image, personal information links, and of course, you can also modify other configuration content.
@@ -313,6 +345,7 @@ draft: false
 toc: true
 donate: false
 comment: false
+ogImage: https://xxxxx/xxxxx/xxxxx // cover image
 ---
 ```
 
@@ -334,7 +367,7 @@ All the icons in the blog are using the open source icon library [remixicon](htt
 
 ### Note
 
-In the `astro.config.mjs` file in the root directory, it is recommended to modify the `site` property to correctly generate the site map.
+In the `astro.config.js` file in the root directory, it is recommended to modify the `site` property to correctly generate the site map.
 
 ```js
 export default defineConfig({

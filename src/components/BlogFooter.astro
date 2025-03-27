@@ -1,8 +1,8 @@
 ---
-import {site} from "../consts";
+import {site} from "@/consts";
+import {t} from '@/i18n/utils'
+import {formatDate} from "@/utils/formatDate.js";
 const {title, date, url} = Astro.props;
-import {t} from '../i18n/utils'
-import {formatDate} from "../utils/formatDate.js";
 ---
 
 <div class="border-l-4 my-4 p-4 border-l-skin-base bg-skin-card break-all">
@@ -19,7 +19,7 @@ import {formatDate} from "../utils/formatDate.js";
   }
   {
     site.url?   <div>
-      {t('footer.originalLink')}：<a href={site.url + '/' + url} class="hover:text-skin-active">{site.url + '/' + url}</a>
+      {t('footer.originalLink')}：<a href={site.url + url} class="hover:text-skin-active">{site.url + url}</a>
     </div>: ''
   }
 </div>
