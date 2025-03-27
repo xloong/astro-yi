@@ -6,8 +6,9 @@ import GoogleAnalytics from '@/components/GoogleAnalytics.astro';
 import BusuanziAnalytics from '@/components/BusuanziAnalytics.astro';
 import getUrl from "@/utils/getUrl";
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const {title = site.title, description = site.description, mathjax = false, mermaid = false, ogImage:ogimage = ''} = Astro.props
+const {description = site.description, mathjax = false, mermaid = false, ogImage:ogimage = ''} = Astro.props
 let ogImage =  ogimage || new URL(Astro.url.pathname, Astro.site?.href).href;
+let title = Astro.props.title ? `${Astro.props.title} - ${site.title}` : site.title;
 // console.log(Astro.props)
 const ogType = (title === site.title) ? "website" : "article";
 const originalDate = new Date(Astro.props.date)
@@ -22,7 +23,7 @@ const formattedDate = originalDate.toLocaleString('zh-CN', options);
   <meta name="generator" content={Astro.generator}>
   <!-- Canonical URL -->
   <link rel="canonical" href={canonicalURL}>
-  <link rel="alternate" type="application/rss+xml" title="Ò¹»ð²©¿Í RSS Feed" href="https://feeds.feedburner.com/15897">
+  <link rel="alternate" type="application/rss+xml" title={site.title} href="https://feeds.feedburner.com/15897">
 
   <!-- Primary Meta Tags -->
   <meta name="title" content={title}>
