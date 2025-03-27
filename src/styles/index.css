@@ -127,25 +127,20 @@ menu {
 
 /* 分割线 */
 .divider-vertical {
-  position: relative;
-  top: -.06em;
-  display: inline-block;
   height: .9em;
+  width: 1px;
+  background-color: rgba(var(--color-text), .2);
+  border: none;
   margin: 0 8px;
-  vertical-align: middle;
-  border-top: 0;
-  border-left: 1px solid rgba(0, 0, 0, .06);
-  background-color: rgba(var(--color-text), .3);
 }
 
 .divider-horizontal {
-  display: flex;
   clear: both;
   width: 100%;
   height: 1px;
   min-width: 100%;
   margin: 12px 0;
-  background-color: rgba(var(--color-text), .3);
+  background-color: rgba(var(--color-text), .2);
 }
 
 .divider-horizontal-mini {
@@ -155,7 +150,7 @@ menu {
   height: 1px;
   min-width: 100%;
   margin: 8px 0;
-  background-color: rgba(var(--color-text), .3);
+  background-color: rgba(var(--color-text), .2);
 }
 
 /* 重写markdown样式 */

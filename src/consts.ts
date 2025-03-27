@@ -1,6 +1,8 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
+import type {AnalyticsConfig} from "./types/analyticsTypes"
+
 /**
  * title {string} website title
  * favicon {string} website favicon url
@@ -9,6 +11,7 @@
  * avatar {string} Avatar used in the profile
  * motto {string} used in the profile
  * url {string} Website link
+ * baseUrl {string} When using GitHubPages, you must enter the repository name, startWith '/', e.g. /repo_name
  * recentBlogSize {number} Number of recent articles displayed in the sidebar
  * archivePageSize {number} Number of articles on archive pages
  * postPageSize {number} Number of articles on blog pages
@@ -25,7 +28,8 @@ export const site = {
   description: 'Welcome to my independent blog website! ',
   author: "Astro-Yi", // required
   avatar: '/avatar.png', // required
-  url: 'https://xxxxxx.com', // required
+  url: 'https://astro-yi-nu.vercel.app', // required
+  baseUrl: '', // When using GitHubPages, you must enter the repository name startWith '/'. e.g. '/astro-blog'
   motto: 'Actions speak louder than words.',
   recentBlogSize: 5,
   archivePageSize: 25,
@@ -45,10 +49,8 @@ export const site = {
  * memosPageSize {number} 10
  */
 export const config = {
-  busuanzi: false,
   lang: 'en', // en | zh-cn | zh-Hant | cs
   codeFoldingStartLines: 16, // Need to re-run the project to take effect
-  ga: false, // If you want to integrate with Google Analytics, just enter your GA-ID here.
 
   // memos config
   memosUrl: '', // https://xxxx.xxx.xx
@@ -121,27 +123,27 @@ export const infoLinks = [
   {
     icon: 'ri-telegram-fill',
     name: 'telegram',
-    outlink: 'xxxxxxx',
+    outlink: '',
   },
   {
     icon: 'ri-twitter-fill',
     name: 'twitter',
-    outlink: 'xxxxxxx',
+    outlink: '',
   },
   {
     icon: 'ri-instagram-fill',
     name: 'instagram',
-    outlink: 'xxxxxxx',
+    outlink: '',
   },
   {
     icon: 'ri-github-fill',
     name: 'github',
-    outlink: 'xxxxxxx',
+    outlink: 'https://github.com/cirry/astro-yi',
   },
   {
     icon: 'ri-rss-fill',
     name: 'rss',
-    outlink: 'xxxxxxx',
+    outlink: '',
   }
 ]
 
@@ -222,4 +224,26 @@ export const comment = {
     'data-lang': "",
     'crossorigin': "",
   }
+
+  //
 }
+
+/**
+ * Analytics Feature Configuration
+ *
+ * This file centralizes the analytics configuration for the application.
+ * It defines and exports the default settings for Umami and Google Analytics.
+ */
+export const analytics: AnalyticsConfig = {
+  enable: false,
+  umamiConfig: {
+    enable: false,
+    id: "",
+    url: ""
+  },
+  gaConfig: {
+    enable: false,
+    id: ""
+  },
+  busuanzi: false,
+};

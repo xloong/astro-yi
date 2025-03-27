@@ -8,14 +8,14 @@
 
 一款以内容为主的Astro博客主题————Yi，快速和简洁。
 
-![](https://astro-yi.obs.cn-east-3.myhuaweicloud.com/7.png)
+![](https://astro-yi.obs.cn-east-3.myhuaweicloud.com/9.png)
 
 ![](https://astro-yi.obs.cn-east-3.myhuaweicloud.com/1.png)
 
 ![](https://astro-yi.obs.cn-east-3.myhuaweicloud.com/8.png)
 
 ### 🔥 特色功能
-
+- [x] 支持GithubPages
 - [x] 支持多端显示
 - [x] 支持暗黑显示
 - [x] 集成Memos
@@ -59,9 +59,22 @@ npm run build # build
 
 打包完成后，在根目录中会生成一个 dist 文件夹。将 'dist' 文件夹上传到 Web 服务器目录中，即可完成部署。
 
+### github pages部署
+
+只需在`/src/consts.ts`中修改`site`对象中的`url`和`baseUrl`属性：
+
+```js
+export const site = {
+  // ...
+  url: 'https://cirry.github.io', // 必填 你的网站主域名
+  baseUrl: 'yi.github.io', // 必填，仓库名称
+  // ...
+}
+```
+
 ## 配置
 
-在 src/const.ts 文件中，您可以根据自己的需求进行一些修改。
+本博客的唯一的配置文件就是：`src/consts.ts`，您可以根据自己的需求进行一些修改。
 
 ```ts
 /**
@@ -71,6 +84,7 @@ npm run build # build
  * author：作者
  * motto：格言
  * url：网站地址
+ * baseUrl： 当使用github pages时，必须填入仓库名称，用/开头
  * recentBlogSize：最近文章数量
  * archivePageSize：归档页面每页显示的数量
  * postPageSize：文章页面每页显示的数量
@@ -85,6 +99,7 @@ export const site = {
     avatar: '/avatar.png',
     motto: '最重要的事情只有一件',
     url: 'https://astro-yi-nu.vercel.app',
+    baseUrl: '', // 用斜杠开头 '/astro-blog'
     recentBlogSize: 5,
     archivePageSize: 25,
     postPageSize: 10,
@@ -102,10 +117,8 @@ export const site = {
  * memosPageSize {number} 10
  */
 export const config = {
-  busuanzi: false,
   lang: 'en', // English: en | 简体中文: zh-cn | 繁體中文: zh-Hant | cs
   codeFoldingStartLines: 16, // Need to re-run the project to take effect
-  ga: false, // If you want to integrate with Google Analytics, just enter your GA-ID here.
   
   // memos config
   memosUrl: '', // https://xxxx.xxx.xx
@@ -262,25 +275,27 @@ export const comment = {
     'crossorigin': "anonymous",
   }
 }
-```
 
+/**
+ * Analytics Feature Configuration
+ * enable: {boolean} 这个必须启用才能使用其他的配置项
+ * This file centralizes the analytics configuration for the application.
+ * It defines and exports the default settings for Umami and Google Analytics.
+ * busuanzi {boolean}
+ */
+export const analytics: AnalyticsConfig = {
+  enable: false,
+  umamiConfig: {
+    enable: false,
+    id: "",
+    url: ""
+  },
+  gaConfig: {
+    enable: false,
+    id: ""
+  },
+  busuanzi: false,
+};
+```
 
 请修改您的网站配置、评论系统配置、赞赏功能图片、个人信息链接，当然，您也可以修改其他配置内容。
-
-### 备注
-
-在根目录中的 astro.config.mjs 文件中，建议修改 site 属性以正确生成网站地图。
-
-```js
-export default defineConfig({
-  site: 'https://xxxx.com',// 修改为您自己的网站地址
-   // ...
-})
-```
-
-在public目录中的robots.txt文件最后添加一行您的sitemap文件路径。
-
-```text
-Sitemap: [博客地址]/sitemap-0.xml
-// 类似：Sitemap: https://astro-yi-nu.vercel.app/sitemap-0.xml
-```
