@@ -140,33 +140,18 @@ export const infoLinks = [
   // {
   //   icon: 'ri-telegram-fill',
   //   name: 'telegram',
-  //   outlink: 'xxxxxxx',
+  //   outlink: '',
   // },
   // {
   //   icon: 'ri-twitter-fill',
   //   name: 'twitter',
-  //   outlink: 'xxxxxxx',
+  //   outlink: '',
   // },
   // {
   //   icon: 'ri-instagram-fill',
   //   name: 'instagram',
-  //   outlink: 'xxxxxxx',
+  //   outlink: '',
   // },
-  {
-    icon: 'ri-telegram-fill',
-    name: 'telegram',
-    outlink: '',
-  },
-  {
-    icon: 'ri-twitter-fill',
-    name: 'twitter',
-    outlink: '',
-  },
-  {
-    icon: 'ri-instagram-fill',
-    name: 'instagram',
-    outlink: '',
-  },
   {
     icon: 'ri-github-fill',
     name: 'github',
