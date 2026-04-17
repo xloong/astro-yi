@@ -1,5 +1,6 @@
 ---
 title: New features
+date: 2024-01-01
 description: More new features specific to this theme.
 tags: [feature]
 category: astro
