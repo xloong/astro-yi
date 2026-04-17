@@ -1,11 +1,10 @@
 ---
 title: New features
 description: More new features specific to this theme.
-date: 2024-03-24
+tags: [feature]
+category: astro
 mermaid: true
 mathjax: true
-category: [astro, feature]
-tags: [astro, feature]
 ogImage: https://astro-yi.obs.cn-east-3.myhuaweicloud.com/avatar.png
 draft: true
 ---
@@ -46,7 +45,7 @@ draft: true
 
 ::github{repo="cirry/astro-yi"}
 
-### Support collapse
+### Support Collapse
 
 ```bash
 :::collapse
@@ -58,7 +57,7 @@ Hello World!
 Hello World!
 :::
 
-### Support admonitions
+### Support Admonitions
 
 ```markdown
 :::tip[Customized Title]
@@ -100,7 +99,7 @@ caution
 danger
 :::
 
-### Support mermaid
+### Support Mermaid
 
 Use:
 
@@ -164,7 +163,7 @@ classDiagram
     }
 ```
 
-### Support mathjax
+### Support Mathjax
 
 + set markdown frontmatter `mathjax: true`.
 
