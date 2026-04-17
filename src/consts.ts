@@ -50,7 +50,7 @@ export const site = {
  * memosPageSize {number} 10
  */
 export const config = {
-  lang: 'zh-cn', // en | zh-cn | zh-Hant | cs
+  lang: 'en' as 'en' | 'zh-cn' | 'zh-hant' | 'cs', // en | zh-cn | zh-hant | cs
   codeFoldingStartLines: 16, // Need to re-run the project to take effect
 
   // memos config
@@ -194,7 +194,7 @@ export const friendshipLinks =
     //   name: "Cirry's Blog",
     //   url: 'https://cirry.cn',
     //   avatar: "https://cirry.cn/avatar.png",
-    //   description: '前端开发的日常'
+    //   description: '前端开发的日常11111111111111111111111111111111'
     // },
     // {
     //   name: "Nuke Blog",

@@ -29,6 +29,9 @@ A content-focused Astro blog theme, Yi, in Chinese, it means fast and concise.
 - [x] Supports meriand
 - [x] Supports mathjax
 - [x] Supports expressive code
+- [x] Support Button
+- [x] Support Github Card
+- [x] Support Admonitions
 
 ......
 
@@ -40,7 +43,7 @@ Give it a try! Click the button above, and you can deploy with just one click.
 
 ### 👨🏻‍💻 Manual Installation
 
-Recommended for use `nodejs >= 18`，`pnpm >= 8`。
+Recommended for use `nodejs >= 20`,`pnpm >= 8`。
 
 ```bash
 git clone https://github.com/cirry/astro-yi.git
@@ -111,7 +114,7 @@ export const site = {
  * memosPageSize {number} 10
  */
 export const config = {
-  lang: 'en', // English: en | 简体中文: zh-cn | 繁體中文: zh-Hant | cs
+  lang: 'en', // English: en | 简体中文: zh-cn | 繁體中文: zh-hant | cs
   codeFoldingStartLines: 16, // Need to re-run the project to take effect
   
   // memos config
