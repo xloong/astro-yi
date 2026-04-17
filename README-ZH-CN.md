@@ -30,6 +30,9 @@
 - [x] 支持meriand
 - [x] 支持mathjax
 - [x] 支持expressive-code
+- [x] 支持按钮样式
+- [x] 支持显示Github仓库详情
+- [x] 支持旁白
 
 ......等等
 
@@ -41,7 +44,7 @@
 
 ### 👨🏻‍💻 手动部署
 
-推荐使用：`nodejs >= 18`，`pnpm >= 8`。
+推荐使用：`nodejs >= 20`，`pnpm >= 8`。
 
 ```bash
 git clone https://github.com/cirry/astro-yi.git
@@ -117,7 +120,7 @@ export const site = {
  * memosPageSize {number} 10
  */
 export const config = {
-  lang: 'en', // English: en | 简体中文: zh-cn | 繁體中文: zh-Hant | cs
+  lang: 'en', // English: en | 简体中文: zh-cn | 繁體中文: zh-hant | cs
   codeFoldingStartLines: 16, // Need to re-run the project to take effect
   
   // memos config
