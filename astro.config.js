@@ -33,5 +33,20 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [remarkModifiedTime, resetRemark, remarkDirective, remarkAsides({}), remarkCollapse({}), remarkGithubCard(), remarkButton(), remarkHtml()],
     rehypePlugins: [lazyLoadImage],
+  },
+  redirects: {
+    // '/blog/1.html': {
+    //   status: 301,
+    //   destination: '/blog/markdown-elements'
+    // },
+
+    "/feed": {
+      status: 301,
+      destination: "/rss.xml"
+    },
+
+    '/article/[...slug]': '/blog/[...slug]',
+    '/tag/[...slug]': '/tags/[...slug]',
+
   }
 });
