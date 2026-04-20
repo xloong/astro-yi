@@ -23,20 +23,20 @@ import type {AnalyticsConfig} from "./types/analyticsTypes"
  *    All tags will be displayed in single page "/tags".
  */
 export const site = {
-  title: 'Astro Theme Yi', // required
-  favicon: '/favicon.svg', // required
-  description: 'Welcome to my independent blog website! ',
-  author: "Astro-Yi", // required
+  title: '夜火笔记', // required
+  favicon: '/favicon.png', // required
+  description: '关于code的二三事',
+  author: "夜火/xloong", // required
   avatar: '/avatar.png', // required
-  url: 'https://astro-yi-nu.vercel.app', // required
+  url: 'https://blog.15897.com', // required
   baseUrl: '', // When using GitHubPages, you must enter the repository name startWith '/'. e.g. '/astro-blog'
-  motto: 'Actions speak louder than words.',
-  recentBlogSize: 5,
+  motto: 'CV转TAB转Vibe码农',
+  recentBlogSize: 10,
   archivePageSize: 25,
   postPageSize: 10,
   feedPageSize: 20,
   beian: '',
-  asideTagsMaxSize: 0,
+  asideTagsMaxSize: 20,
 }
 
 /**
@@ -67,53 +67,59 @@ export const config = {
  */
 export const categories = [
   {
-    name: "Blog",
+    name: "夜火博客",
     iconClass: "ri-draft-line",
-    href: "/blog/1",
+    href: "https://www.15897.com",
+    target: "_blank",
   },
   {
-    name: "Feed",
-    iconClass: "ri-lightbulb-flash-line",
-    href: "/feed/1",
+    name: "标签",
+    iconClass: "ri-price-tag-3-line",
+    href: "/tags",
   },
+  // {
+  //   name: "Feed",
+  //   iconClass: "ri-lightbulb-flash-line",
+  //   href: "/feed/1",
+  // },
   // {
   //   name: "Memos",
   //   iconClass: "ri-quill-pen-line",
   //   href: "/memos",
   // },
   {
-    name: "Archive",
+    name: "归档",
     iconClass: "ri-archive-line",
     href: "/archive/1",
   },
+  // {
+  //   name: "Message",
+  //   iconClass: "ri-chat-1-line",
+  //   href: "/message",
+  // },
   {
-    name: "Message",
-    iconClass: "ri-chat-1-line",
-    href: "/message",
-  },
-  {
-    name: "Search",
+    name: "搜索",
     iconClass: "ri-search-line",
     href: "/search",
   },
-  {
-    name: "More",
-    iconClass: "ri-more-fill",
-    href: "javascript:void(0);",
-    children: [
-      {
-        name: 'About',
-        iconClass: 'ri-information-line',
-        href: '/about',
-      },
-      {
-        name: 'Friends',
-        iconClass: 'ri-user-5-line',
-        href: '/friends',
-        target: '_self',
-      },
-    ]
-  }
+  // {
+  //   name: "More",
+  //   iconClass: "ri-more-fill",
+  //   href: "javascript:void(0);",
+  //   children: [
+  //     {
+  //       name: 'About',
+  //       iconClass: 'ri-information-line',
+  //       href: '/about',
+  //     },
+  //     {
+  //       name: 'Friends',
+  //       iconClass: 'ri-user-5-line',
+  //       href: '/friends',
+  //       target: '_self',
+  //     },
+  //   ]
+  // }
 ]
 
 /**
@@ -123,27 +129,27 @@ export const infoLinks = [
   {
     icon: 'ri-telegram-fill',
     name: 'telegram',
-    outlink: '',
+    outlink: 'https://t.me/yehuo001',
   },
   {
     icon: 'ri-twitter-fill',
     name: 'twitter',
-    outlink: '',
+    outlink: 'https://x.com/xloong',
   },
-  {
-    icon: 'ri-instagram-fill',
-    name: 'instagram',
-    outlink: '',
-  },
+  // {
+  //   icon: 'ri-instagram-fill',
+  //   name: 'instagram',
+  //   outlink: '',
+  // },
   {
     icon: 'ri-github-fill',
     name: 'github',
-    outlink: 'https://github.com/cirry/astro-yi',
+    outlink: 'https://github.com/xloong',
   },
   {
     icon: 'ri-rss-fill',
     name: 'rss',
-    outlink: '',
+    outlink: '/rss.xml',
   }
 ]
 
