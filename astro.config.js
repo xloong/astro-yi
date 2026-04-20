@@ -46,6 +46,11 @@ export default defineConfig({
     },
 
 
+    "/jiaocheng": {
+      status: 301,
+      destination: "/blog/jiaocheng"
+    },
+
     "/article/2023-01-10": {
       status: 301,
       destination: "/blog/webview-wxpay"
