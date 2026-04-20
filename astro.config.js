@@ -61,14 +61,10 @@ export default defineConfig({
     },
 
 
-    '/article/[...slug]': {
-      status: 301,
-      destination: '/blog/[...slug]'
-    },
-    '/tag/[...slug]': {
-      status: 301,
-      destination: '/tags/[...slug]'
-    },
+    // 由 vercel.json 处理 重定向
+    // 绕过了 Astro 的构建校验，且 Vercel 在边缘节点处理重定向，速度最快。
+    // '/article/[...slug]': '/blog/[...slug]',
+    // '/tag/[...slug]': '/tags/[...slug]',
 
 
     "/blog/2023-01-10": {
