@@ -82,4 +82,38 @@ let resultPosts = sortPosts.splice(0, site.recentBlogSize);
   </div>
 </div>
 
+<div>
+  <div class="aside-widget">
+    <i class="ri-links-line menu-icon"></i> 友情链接
+  </div>
+  <div class="flex flex-col">
+    <a
+      href="https://hhacker.com"
+      class="truncate cursor-pointr mt-1 hover:text-skin-active"
+      title="Hhacker's blog"
+      target="_blank"
+    >
+      Hhacker's blog
+    </a>
+    <a
+      href="https://nukeblog.cn"
+      class="truncate cursor-pointr mt-1 hover:text-skin-active"
+      title="Nuke blog"
+      target="_blank"
+    >
+      Nuke blog
+    </a>
+
+    <a
+      href="https://cfbatch.com"
+      target="_blank"
+      class="truncate cursor-pointr mt-1 hover:text-skin-active"
+      title="CloudFlare批量DNS解析域名"
+    >
+      CloudFlare批量DNS解析域名
+    </a>
+
+  </div>
+</div>
+
 {comment.enable && comment.type === "waline" && <CommentAside/>}
