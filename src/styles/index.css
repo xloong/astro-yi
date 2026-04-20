@@ -1,6 +1,7 @@
 @import url('./github-markdown.css');
 @import "remixicon/fonts/remixicon.css";
 @import "remark-aside.css";
+@import 'lxgw-wenkai-screen-webfont/style.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -20,6 +21,7 @@ html {
 }
 
 body {
+  font-family: "LXGW WenKai Screen","jetbrains-mono", sans-serif;
   min-height: 100%;
 }
 
