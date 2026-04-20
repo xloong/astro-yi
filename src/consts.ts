@@ -31,8 +31,8 @@ export const site = {
   avatar: '/avatar.png', // required
   url: 'https://www.15897.com', // required
   baseUrl: '', // When using GitHubPages, you must enter the repository name startWith '/'. e.g. '/astro-blog'
-  motto: '个人的碎碎念收集箱',
-  recentBlogSize: 5,
+  motto: 'CV转TAB转Vibe码农',
+  recentBlogSize: 10,
   archivePageSize: 25,
   postPageSize: 10,
   feedPageSize: 20,
@@ -137,16 +137,16 @@ export const categories = [
  * Personal link address
  */
 export const infoLinks = [
-  // {
-  //   icon: 'ri-telegram-fill',
-  //   name: 'telegram',
-  //   outlink: '',
-  // },
-  // {
-  //   icon: 'ri-twitter-fill',
-  //   name: 'twitter',
-  //   outlink: '',
-  // },
+  {
+    icon: 'ri-telegram-fill',
+    name: 'telegram',
+    outlink: 'https://t.me/yehuo001',
+  },
+  {
+    icon: 'ri-twitter-fill',
+    name: 'twitter',
+    outlink: 'https://x.com/xloong',
+  },
   // {
   //   icon: 'ri-instagram-fill',
   //   name: 'instagram',
