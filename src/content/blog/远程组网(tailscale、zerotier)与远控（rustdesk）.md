@@ -2,7 +2,7 @@
 title: 远程组网(tailscale、zerotier)与远控（rustdesk）
 uid: 20230315211524
 datetime: 2023-02-08 21:15
-slug: 2023-02-08
+slug: tailscale-zerotier-rustdesk
 aliases: []
 tags: [工具]
 source: 

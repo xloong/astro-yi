@@ -45,8 +45,35 @@ export default defineConfig({
       destination: "/rss.xml"
     },
 
-    '/article/[...slug]': '/blog/[...slug]',
-    '/tag/[...slug]': '/tags/[...slug]',
+
+    "/article/2023-01-10": {
+      status: 301,
+      destination: "/blog/webview-wxpay"
+    },
+    "/article/2023-02-08": {
+      status: 301,
+      destination: "/blog/tailscale-zerotier-rustdesk"
+    },
+
+
+    '/article/[...slug]': {
+      status: 301,
+      destination: '/blog/[...slug]'
+    },
+    '/tag/[...slug]': {
+      status: 301,
+      destination: '/tags/[...slug]'
+    },
+
+
+    "/blog/2023-01-10": {
+      status: 301,
+      destination: "/blog/webview-wxpay"
+    },
+    "/blog/2023-02-08": {
+      status: 301,
+      destination: "/blog/tailscale-zerotier-rustdesk"
+    },
 
   }
 });

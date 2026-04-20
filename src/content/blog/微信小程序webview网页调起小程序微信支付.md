@@ -2,7 +2,7 @@
 title: 微信小程序webview网页调起小程序微信支付
 uid: 202301102114
 datetime: 2023-01-10 21:14
-slug: 2023-01-10
+slug: webview-wxpay
 aliases: []
 tags: 
   - 小程序
