@@ -235,10 +235,8 @@ mkdir -p ~/.config/home-manager
   programs.git = {
     enable = true;
     settings.user = {
-      user = {
-	      name  = "Your Name";
-	      email = "your.email@example.com";
-      };
+	  name  = "Your Name";
+	  email = "your.email@example.com";
     };
   };
 
@@ -250,7 +248,10 @@ mkdir -p ~/.config/home-manager
 
   programs.lazygit = {
     enable = true;
-    settings.gui.language = "zh-CN";
+    settings.gui = {
+      language = "zh-CN";
+      timeFormat = "2006-01-02";
+    };
   };
 
   # 启用并配置 Neovim 模块
@@ -446,17 +447,80 @@ chsh -s "$(command -v fish)"
 
 ## 各类nix外的工具
 
-https://github.com/herdrdev/herdr
+https://github.com/herdrdev/herdr  
 
 ```bash
 curl -fsSL https://herdr.dev/install.sh | sh
 ```
 
-https://github.com/saladday/cc-switch-cli
+https://github.com/saladday/cc-switch-cli  
 
 ```bash
 curl -fsSL https://github.com/SaladDay/cc-switch-cli/releases/latest/download/install.sh | bash
 ```
+
+https://usemagpie.ai/zh/  与cc-switch同类，选其1即可
+
+```bash
+curl -fsSL https://usemagpie.ai/install.sh | sh
+
+
+magpie provider add "Sub2API" url=https://your-sub2api-domain.com/v1 key=sk-xxxxxxx
+
+```
+WSL 中更推荐使用 systemd
+
+先确认 systemd 是否启用：
+
+```bash
+  ps -p 1 -o comm=
+```
+
+如果输出是：
+
+```text
+  systemd
+```
+
+可以创建用户级 systemd 服务：
+
+```bash
+	  mkdir -p ~/.config/systemd/user
+```
+
+创建 ~/.config/systemd/user/magpie.service：
+
+```ini
+[Unit]
+Description=Magpie AI Gateway
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/home/[user]/.local/bin/magpie serve
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target
+```
+
+然后启用：
+
+```bash
+systemctl --user daemon-reload
+systemctl --user enable --now magpie.service
+```
+
+检查：
+
+```bash
+systemctl --user status magpie.service
+magpie healthcheck
+```
+
+
+
 
 https://pi.dev
 

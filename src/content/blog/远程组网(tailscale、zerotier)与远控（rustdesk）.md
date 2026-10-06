@@ -4,14 +4,16 @@ uid: 20230315211524
 datetime: 2023-02-08 21:15
 slug: tailscale-zerotier-rustdesk
 aliases: []
-tags: [工具]
-source: 
-link: 
-
+tags:
+  - 工具
+  - tailscale
+source:
+link:
 description: 远程组网(tailscale、zerotier)与远控（rustdesk）
 date: 2023-02-08 21:15:00
 category: 笔记
 ---
+2026-10-06 更新：现在远控已经完全依赖网易的[UU远程](https://uuyc.163.com)了
 
 <aside>
 💡 远程组网主要是通过vpn或frp等技术，将远程内网的电脑，与当前电脑组成一张内网（类似局域网），可以互相访问，实现内网穿透，远程办公。
